@@ -57,7 +57,7 @@ function go(
 		}
 
 		$httpMessageElement->dataset->set("id", "");
-		$contentType = $httpMessageElement->dataset->get("content-type");
+		$contentType = $responseEntity->getContentType();
 		/** @var ?SyntaxHighlighter $formatter */
 		$formatter = null;
 		if(array_key_exists($contentType, SyntaxHighlighter::CONTENT_TYPE_CLASS_MAP)) {

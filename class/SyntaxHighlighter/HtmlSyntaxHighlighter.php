@@ -11,6 +11,7 @@ class HtmlSyntaxHighlighter extends MarkupSyntaxHighlighter {
 		$document = new DOMDocument();
 		$document->preserveWhiteSpace = true;
 		$previousUseInternalErrors = libxml_use_internal_errors(true);
+		libxml_clear_errors();
 
 		try {
 			$loaded = $document->loadHTML(

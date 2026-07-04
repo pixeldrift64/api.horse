@@ -38,4 +38,12 @@ class ResponseEntityTest extends TestCase {
 		self::assertSame("Bearer ••••••••", $redacted->headers[1]->value);
 		self::assertSame("The token is ••••••••.", $redacted->body);
 	}
+
+	public function testGetContentTypeNormalisesHeaderValue():void {
+		$sut = new ResponseEntity();
+		$sut->setStatus(200, "OK");
+		$sut->addHeader("Content-Type", " Text/HTML ; charset=UTF-8");
+
+		self::assertSame("text/html", $sut->getContentType());
+	}
 }

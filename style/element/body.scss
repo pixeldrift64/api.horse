@@ -1,5 +1,12 @@
+@use "../variable/break";
+
 body {
 	margin: 0;
+	padding-bottom: 4rem;
 	background-color: var(--pal-2);
 	color: var(--pal-1);
+
+	@media(min-width: break.$small) {
+		padding-block: 0;
+	}
 }

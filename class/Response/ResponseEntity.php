@@ -86,7 +86,7 @@ class ResponseEntity {
 				continue;
 			}
 
-			return explode(";", $header->value)[0];
+			return strtolower(trim(explode(";", $header->value)[0]));
 		}
 
 		return null;
