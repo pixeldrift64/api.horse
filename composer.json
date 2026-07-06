@@ -29,7 +29,7 @@
 		}
 	},
 	"scripts": {
-		"behat": "test/bin/behat",
+		"behat": "test/behat/run-behat",
 		"test": [
 			"@behat"
 		]
